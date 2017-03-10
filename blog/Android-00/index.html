@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android系统架构 | WeDoX工作室</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android大致可分为4层架构：Linux内核层、系统运行库层、应用框架层和应用层。
+1、Linux内核层这一层为Android设备的各种硬件提供了底层驱动。如显示驱动、照相机驱动、蓝牙驱动等等。
+2、系统运行库层这一层通过一些C/C++库为Android系统提供了主要的特性支持。如SQLite库提供了数据库的支持、WebkIt库提供了流览器内核的支持等等。
+同时，这一层还有Android运行时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android系统架构">
+<meta property="og:url" content="http://yoursite.com/blog/Android-00/index.html">
+<meta property="og:site_name" content="WeDoX工作室">
+<meta property="og:description" content="Android大致可分为4层架构：Linux内核层、系统运行库层、应用框架层和应用层。
+1、Linux内核层这一层为Android设备的各种硬件提供了底层驱动。如显示驱动、照相机驱动、蓝牙驱动等等。
+2、系统运行库层这一层通过一些C/C++库为Android系统提供了主要的特性支持。如SQLite库提供了数据库的支持、WebkIt库提供了流览器内核的支持等等。
+同时，这一层还有Android运行时">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4923945-d99e1e0b909ca9c6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-03-10T17:00:50.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android系统架构">
+<meta name="twitter:description" content="Android大致可分为4层架构：Linux内核层、系统运行库层、应用框架层和应用层。
+1、Linux内核层这一层为Android设备的各种硬件提供了底层驱动。如显示驱动、照相机驱动、蓝牙驱动等等。
+2、系统运行库层这一层通过一些C/C++库为Android系统提供了主要的特性支持。如SQLite库提供了数据库的支持、WebkIt库提供了流览器内核的支持等等。
+同时，这一层还有Android运行时">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4923945-d99e1e0b909ca9c6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternate" href="/atom.xml" title="WeDoX工作室" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">WeDoX工作室</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Android-00" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Android-00/" class="article-date">
+  <time datetime="2017-03-10T16:54:33.000Z" itemprop="datePublished">2017-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android系统架构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android大致可分为4层架构：Linux内核层、系统运行库层、应用框架层和应用层。<br><img src="http://upload-images.jianshu.io/upload_images/4923945-d99e1e0b909ca9c6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Alt text"></p>
+<h2 id="1、Linux内核层"><a href="#1、Linux内核层" class="headerlink" title="1、Linux内核层"></a>1、Linux内核层</h2><p>这一层为Android设备的各种硬件提供了底层驱动。如显示驱动、照相机驱动、蓝牙驱动等等。</p>
+<h2 id="2、系统运行库层"><a href="#2、系统运行库层" class="headerlink" title="2、系统运行库层"></a>2、系统运行库层</h2><p>这一层通过一些C/C++库为Android系统提供了主要的特性支持。如SQLite库提供了数据库的支持、WebkIt库提供了流览器内核的支持等等。</p>
+<p>同时，这一层还有Android运行时库，它主要提供了一些核心库，能够允许开发者使用Java语言来编写Android应用。Android运行时库中还包含了Dalvik虚拟机，它使得每一个Android应用都能运行在独立的进程中，并且拥有一个自己的Dalvik虚拟机实例。</p>
+<h2 id="3、应用框架层"><a href="#3、应用框架层" class="headerlink" title="3、应用框架层"></a>3、应用框架层</h2><p>这一层提供了构建应用程序时可能用到的API，Android自带的一些核心应用就是使用这些API开发的。开发者也可以利用这些API构建自己的应用程序。</p>
+<h2 id="4、应用层"><a href="#4、应用层" class="headerlink" title="4、应用层"></a>4、应用层</h2><p>所有安装在Android手机上的应用程序都属于这一层。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/blog/Android-00/" data-id="cj042m92100009cqw8zah6kvn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/product/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          我制造的垃圾
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/daliyPicture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">每日一图</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2057/03/">March 2057</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/myLink/">我的链接</a>
+          </li>
+        
+          <li>
+            <a href="/blog/product/">我制造的垃圾</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Android-00/">Android系统架构</a>
+          </li>
+        
+          <li>
+            <a href="/blog/daliyPicture/">每日一图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 jdallen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
