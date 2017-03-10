@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>蓝色拼图</title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#showLevel{
+				color: #FFBE00;
+				width: 400px;
+				height:50px;
+				font-size: 40px;
+				
+			}
+			.btn_list{
+				margin-top: 20px;
+				margin-left: 10px;
+			}
+			.btn_list span{
+				background-color: #3276B1;
+				padding: 10px;
+				color: #FFBE00;
+				border-radius:4px ;
+			}
+			.btn_list span:hover{
+				
+				background-color: #323234;
+				padding: 10px;
+				color: #FFBE00;
+				border-radius:4px ;
+			}
+		</style>
+		
+	</head>
+	
+	<body onLoad="draw();" bgcolor="#272729">	
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<div id="showLevel">第1关</div>
+		<div class="btn_list">
+			<span onclick="resetGame();">回到第一关</span>
+			<span onclick="again();">重来本关</span>
+			<span onclick="help();">玩法说明</span>
+		</div>
+	</body>
+	<script>
+		var level =1;//关数
+		var blockMap = new Array();
+		var blockW;//方块的边长
+		//刚打开时先调用初始化二维数组函数
+		initBlockMap();
+		
+		//初始化二维数组
+		function initBlockMap(){
+			document.getElementById("showLevel").innerHTML="第"+level+"关";
+			for(var k=0;k<level;k++){  
+				//声明二维，每一个一维数组里面的一个元素都是一个数组；
+				blockMap[k]=new Array();  
+				for(var j=0;j<level;j++){   
+					blockMap[k][j]=false;    
+				}
+			}
+		}
+		
+		function draw(){
+			//获取画板的上下文
+			var ctx =document.getElementById("canvas").getContext('2d');
+			//根据关数获取小方块的边长
+			blockW = 400/level;
+			//
+			for(var i=0; i<level; i++){
+				for(var j=0; j<level; j++){
+					ctx.beginPath();
+			        ctx.rect(j*blockW,i*blockW,(j+1)*blockW,(i+1)*blockW);
+			        //根据布尔值对方块进行填充
+					if(blockMap[i][j]==true){
+						ctx.fillStyle = "#3A83FB";
+			            ctx.fill();
+					}else{
+						ctx.fillStyle = "#FB9B24";
+			            ctx.fill();
+					}
+					ctx.lineWidth = 5;
+			        ctx.strokeStyle = "black";
+					ctx.stroke();
+					ctx.closePath();
+				}//end: for(j)
+			}//end: for(i)
+		}
+		//鼠标事件
+		document.onmousedown = function(event) {
+			var x = event.clientX;
+			var y = event.clientY;
+			//限制在画板上
+			if(x>0 && x<400 && y>0 && y<400){
+				var row = parseInt(y/blockW);
+				var col = parseInt(x/blockW);
+				//alert(row+"   "+col);
+				change(row, col);
+				draw();
+				//判断是否已经通关
+				if(isWin()){
+					alert("进入第"+(level+1)+"关");
+					nextLevel();
+				}
+			}
+		}
+		
+		//算法（规则)---游戏核心:自己翻转，相邻的也翻转
+		function change(row,col){
+			blockMap[row][col] = !blockMap[row][col];
+		// 上
+		    if (row - 1 >= 0)
+			   blockMap[row - 1][col] = !blockMap[row - 1][col];
+		// 下
+		if (row + 1 < level)
+			blockMap[row + 1][col] = !blockMap[row + 1][col];
+		// 左
+		if (col - 1 >= 0)
+			blockMap[row][col - 1] = !blockMap[row][col - 1];
+		// 右
+		if (col + 1 < level)
+			blockMap[row][col + 1] = !blockMap[row][col + 1];
+		}
+		
+		//判断当前关是否通关
+		function isWin(){
+			for (var i = 0; i < level; i++) {
+				for (var j = 0; j < level; j++) {
+					if (!blockMap[i][j]) {//如果还有方块当前颜色不是蓝色，则不通关。
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+		//进入下一关
+		function nextLevel(){
+			level++;
+			initBlockMap();
+			draw();
+		}
+		//玩法介绍
+		function help(){
+			confirm("如何才算赢：使所有方块全部变成蓝色。 \n玩法：每个方块一面橙色，一面蓝色。点击一个方块，这个方块的颜色会翻转，并且，与它邻接的方块的颜色也会翻转。");
+			
+		}
+		//回到第一关
+		function resetGame(){
+			if(confirm("您确定回到第一关？")){
+				level =1;
+			    initBlockMap();
+			    draw();
+			}
+			
+		}
+		//重来本关
+		function again(){
+			if(confirm("您确定重来本关？")){
+			    initBlockMap();
+			    draw();
+			}
+		}
+		</script>
+</html>
