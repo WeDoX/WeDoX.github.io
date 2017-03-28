@@ -3,14 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | WeDoX工作室</title>
+  <title>列表无数据时显示其他View | WeDoX工作室</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WeDoX工作室">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="1、布局如下 
+                        
+
+2、在Activity中：多加一句listView.setEmptyView(findViewById(R.id.acty_comment_tv_empty));即可。
+3、扩展：    因为setEmptyView(View emptyView)这个方法是属于AdapterView这个类的，    所以除了ListView之外，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="列表无数据时显示其他View">
+<meta property="og:url" content="http://yoursite.com/blog/Android-01/index.html">
 <meta property="og:site_name" content="WeDoX工作室">
+<meta property="og:description" content="1、布局如下 
+                        
+
+2、在Activity中：多加一句listView.setEmptyView(findViewById(R.id.acty_comment_tv_empty));即可。
+3、扩展：    因为setEmptyView(View emptyView)这个方法是属于AdapterView这个类的，    所以除了ListView之外，">
+<meta property="og:updated_time" content="2017-03-28T05:47:14.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WeDoX工作室">
+<meta name="twitter:title" content="列表无数据时显示其他View">
+<meta name="twitter:description" content="1、布局如下 
+                        
+
+2、在Activity中：多加一句listView.setEmptyView(findViewById(R.id.acty_comment_tv_empty));即可。
+3、扩展：    因为setEmptyView(View emptyView)这个方法是属于AdapterView这个类的，    所以除了ListView之外，">
   
     <link rel="alternate" href="/atom.xml" title="WeDoX工作室" type="application/atom+xml">
   
@@ -59,144 +75,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2057" class="archive-year">2057</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/jiadong/" class="archive-article-date">
-  <time datetime="2057-03-11T13:42:09.000Z" itemprop="datePublished">Mar 11</time>
+        <section id="main"><article id="post-Android-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Android-01/" class="article-date">
+  <time datetime="2017-03-27T16:54:33.000Z" itemprop="datePublished">2017-03-28</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/jiadong/">家乡特产</a>
+    <h1 class="article-title" itemprop="name">
+      列表无数据时显示其他View
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/myLink/" class="archive-article-date">
-  <time datetime="2057-03-10T14:11:22.000Z" itemprop="datePublished">Mar 10</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/myLink/">我的链接</a>
-    </h1>
-  
+        <p>1、布局如下 </p>
+<framelayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"><br><br>        <listview android:id="@+id/listview" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="#D3D3D3" android:dividerheight="1dip" android:scrollbars="none"><br>        </listview><br><br>        <textview android:id="@+id/acty_comment_tv_empty" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="还没人评论，你来评论一条吧！" android:textcolor="@color/gray"><br></textview></framelayout>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/product/" class="archive-article-date">
-  <time datetime="2057-03-08T16:25:59.000Z" itemprop="datePublished">Mar 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/product/">我制造的垃圾</a>
-    </h1>
-  
+<p>2、在Activity中：<br>多加一句listView.setEmptyView(findViewById(R.id.acty_comment_tv_empty));即可。</p>
+<p>3、扩展：<br>    因为setEmptyView(View emptyView)这个方法是属于AdapterView这个类的，<br>    所以除了ListView之外，其他的子类，如GridView，Spinner等，<br>    应该也可以用这个方法来设置Adapter数据为空时显示另一个View。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/blog/Android-01/" data-id="cj0t4erg40001v8qw9ejtd70h" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
   
     
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Android-01/" class="archive-article-date">
-  <time datetime="2017-03-27T16:54:33.000Z" itemprop="datePublished">Mar 28</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Android-01/">列表无数据时显示其他View</a>
-    </h1>
+    <a href="/blog/product/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          我制造的垃圾
+        
+      </div>
+    </a>
   
+  
+    <a href="/blog/Talk0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">胡说八道(0)</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Talk0/" class="archive-article-date">
-  <time datetime="2017-03-17T16:28:31.000Z" itemprop="datePublished">Mar 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Talk0/">胡说八道(0)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Android-00/" class="archive-article-date">
-  <time datetime="2017-03-10T16:54:33.000Z" itemprop="datePublished">Mar 11</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Android-00/">Android系统架构</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 </section>
         
